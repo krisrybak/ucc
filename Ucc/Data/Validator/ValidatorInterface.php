@@ -55,6 +55,31 @@ interface ValidatorInterface
      */
     public function clearChecks();
 
+
+    /**
+     * Returns list of cleared values
+     *
+     * @return  array
+     */
+    public function getValues();
+
+    /**
+     * Adds value to the list of cleared values in pair name => value
+     *
+     * @param   string  $name   Name of the input
+     * @param   mixed   $value  Value of the input
+     * @return  ValidatorInterface
+     */
+    private function addValue($name, $value);
+
+    /**
+     * Returns clean value of a given input
+     *
+     * @param   string  $field  Name of the field to return
+     * @return  mixed   Field value if available, otherwise NULL
+     */
+    public function getValue($field);
+
     /**
      * Performs checks
      *
